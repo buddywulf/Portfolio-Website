@@ -4,6 +4,12 @@
     --accent-color: #555555;
     --link-color: #e9e0ce;
 }
+
+@font-face {
+    font-family: 'Sins 7';
+    src: url('Images/Sins 7.ttf') format('truetype');
+}
+
 * { 
     margin: 0;
     padding: 0;
@@ -16,7 +22,6 @@ html {
 
 body {
     font-family: 'Sins 7', sans-serif;
-    src: url(Images/Sins 7.ttf);
     color: var(--text-color);
     background-color: var(--background-color);
     display: flex;
