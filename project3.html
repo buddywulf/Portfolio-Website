@@ -37,17 +37,107 @@
         </ul>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <main class="content">
-        <section id="project3">
-            <h2>2026 // Almost touching</h2>
-            <p>You can find my sketchbook for this project here:</p>
-            <p><a href="https://buddywulf.com/" target="_blank">https://buddywulf.com/</a></p>
-        </section>
-    </main>
+   <!-- MAIN CONTENT -->
+<main class="content">
+    <section id="project3">
+        <h2>2026 // Almost touching</h2>
 
-    <script src="Images/oneko.js" data-cat="Images/oneko.gif" data-after=".sidebar .logo"></script>
+    <p></p>
+        <p> This body of work is about intimacy. <p></p>
 
+<p></p>The kind that happens when you strap a screen to your head and faff about learning how to be close to people thousands of miles away. 
+
+<p></p>VRChat is a VR Social platform, and for a lot of people, it's the only place where real connection is actually possible. John lives in rural Czech Republic, far from any queer community where he can just be himself. 5bi5 navigates life with military-related PTSD and rarely leaves home. Sif is someone I wouldn't have met, let alone built a life with, without it. VR gave all of us a space that felt protected enough to let people in.
+
+<p></p>This project allowed me to showcase how VRChat allows intimacy to those who would otherwise struggle to experience it. 
+
+<p></p>However the level of intimacy and immersion you're able to experience is entirely conditional. Full body tracking and face tracking matter more than people realise. Eye contact, body posture, facial expression, these carry a huge amount of human communication, and without them something gets lost. The gap between a £150 second-hand headset and a £2k+ full immersion setup means that level of presence isn't equally available to everyone, and even at the high end, the technology is still temperamental enough to pull you out of the moment.
+
+<p></p>The clothing each person chose is part of that same conversation. Identity and selfhood and how we present ourselves in spaces where we finally feel safe to do so. A fisherman's cap. A quote from Paradise Lost. A kigurumi. Small things that say something true about who these people are.
+
+<p></p>At its core, this is a love letter to a community that made me believe connection was possible in the first place.</p>
+<p> </p>
+<p> </p>
+
+        <!-- Gallery grid — same card style as .hero images -->
+        <div class="hero gallery" style="margin-top: 1.5rem;">
+            <img src="tumblr_ca1619f9019b5ac7bfc9acc417294c09_195307a7_1280.png" alt="Almost touching 1" class="gallery-img" data-index="0">
+            <img src="tumblr_51e4db8e2a51e2b260d68b2185c402a7_01f20747_1280.png" alt="Almost touching 2" class="gallery-img" data-index="1">
+            <img src="tumblr_221de91f59f11ea947c3dfa186b386c0_35d49adc_1280.png" alt="Almost touching 3" class="gallery-img" data-index="2">
+        </div>
+
+        <p style="margin-top: 2rem;">You can find my sketchbook for this project here: <a href="https://buddywulf.com/" target="_blank">https://www.buddywulf.com/</a></p>
+    </section>
+</main>
+
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8592;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Next image">&#8594;</button>
+</div>
+
+<script>
+    // --- Gallery images list ---
+    const galleryImgs = Array.from(document.querySelectorAll('.gallery-img'));
+    const lightbox     = document.getElementById('lightbox');
+    const lbImg        = document.getElementById('lightbox-img');
+    const lbClose      = document.getElementById('lightbox-close');
+    const lbPrev       = document.getElementById('lightbox-prev');
+    const lbNext       = document.getElementById('lightbox-next');
+    let current = 0;
+
+    function openLightbox(index) {
+        current = index;
+        lbImg.src = galleryImgs[current].src;
+        lbImg.alt = galleryImgs[current].alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        updateArrows();
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function showImage(index) {
+        current = (index + galleryImgs.length) % galleryImgs.length; // wraps around
+        lbImg.src = galleryImgs[current].src;
+        lbImg.alt = galleryImgs[current].alt;
+        updateArrows();
+    }
+
+    function updateArrows() {
+        // Hide arrows when only one image
+        lbPrev.style.opacity = galleryImgs.length > 1 ? '1' : '0';
+        lbNext.style.opacity = galleryImgs.length > 1 ? '1' : '0';
+    }
+
+    // Open on thumbnail click
+    galleryImgs.forEach((img, i) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => openLightbox(i));
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => showImage(current - 1));
+    lbNext.addEventListener('click', () => showImage(current + 1));
+
+    // Close on backdrop click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft')  showImage(current - 1);
+        if (e.key === 'ArrowRight') showImage(current + 1);
+        if (e.key === 'Escape')     closeLightbox();
+    });
+</script>
     <!-- Submenu Toggle Script -->
     <script>
         const projectsBtn = document.getElementById('projects-btn');

@@ -14,6 +14,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
 }
 
 html {
@@ -39,6 +43,7 @@ a {
     top: 0;
     left: 0;
     width: 15vw; /* Sidebar takes up 20% of the viewport width */
+    min-width: 200px;
     height: 100vh; /* Full height of the viewport */
     background-color: #2c2c2c;
     color: var(--link-color);
@@ -57,10 +62,15 @@ a {
 
 .sidebar .nav-links a {
     display: block;
-    padding: 5px 20px;
     color: var(--link-color);
     text-decoration: none;
     transition: background 0.3s; /* Smooth hover effect */
+    padding: 5px clamp(20px, 2vw, 30px); /* Responsive padding */
+    font size: 5px clamp (6px, 1vw, 20px); /* Responsive font size */
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Hides any overflow text */
+    text-overflow: ellipsis; /* Adds "..." for overflow text */
+
 }
 
 .sidebar .nav-links a:hover {
@@ -111,36 +121,39 @@ a {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 5px;
-    padding: 10px 14px;
-    width: 100%;
-    min-width: 200px;
-    background-color: var(--background-color);
+    gap: 1px;
+    padding: 10px 15px;
+    width: 100%;   /* ← shrinks to its content instead of stretching */
 }
 
 .contact-submenu li {
     margin: 0;
-    width: 100%;
+    width: fit-content;          /* ← remove width: 100%, let items size naturally */
 }
 
-.contact-submenu a {
-    display: inline-flex;
+.contact-dropdown .contact-submenu a {
+    display: flex;           /* ← flex instead of inline-flex, more reliable here */
     align-items: center;
     justify-content: center;
+    width: 27px;
+    height: 27px;
+    padding: 15px 18px;
+    border-radius: 20px;
     background-color: transparent;
     border: none;
-    padding: 0;
+    flex-shrink: 0;
 }
 
-.contact-submenu a:hover {
+.contact-dropdown .contact-submenu a:hover {
     background-color: var(--accent-color);
 }
 
-.contact-submenu img {
-    width: 20px;
-    height: 20px;
+.contact-dropdown .contact-submenu img {
+    width: 25px;
+    height: 25px;
     display: block;
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 /* --- Main Content Area --- */
@@ -168,7 +181,10 @@ section {
 
 /* --- Hero Section --- */
 .hero {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: left; 
     width: 100%;
 }
 
@@ -183,6 +199,101 @@ section {
 }
 
 .hero img:hover {
-    transform: scale(1.03);
+    transform: scale(1.13);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(231, 184, 82, 0.2);
+}
+
+.video-background {
+    position: relative;
+    width: 100%;           /* ← fits the content column, not the whole viewport */
+    aspect-ratio: 16 / 9;  /* ← maintains correct proportions automatically */
+    overflow: hidden;
+    border-radius: 8px;    /* ← optional, matches your iframe style elsewhere */
+}
+
+.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Gallery thumbnail cursor --- */
+.gallery .gallery-img {
+    cursor: pointer;
+}
+
+/* --- Lightbox Overlay --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.92);
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 85vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(231, 184, 82, 0.15);
+    user-select: none;
+}
+
+.lightbox-arrow {
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.2s;
+    font-family: sans-serif; /* arrows render better without pixel font */
+}
+
+.lightbox-arrow:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    font-family: sans-serif;
+}
+
+.lightbox-close:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
 }
