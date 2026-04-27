@@ -4,6 +4,13 @@
     --accent-color: #555555;
     --link-color: #e9e0ce;
 }
+@font-face {
+    font-family: 'Sins 7';
+    src: url('images/Sins 7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 * { 
     margin: 0;
     padding: 0;
