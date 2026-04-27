@@ -139,8 +139,8 @@ a {
 
 /* --- Main Content Area --- */
 .content {
-    margin-left: 20vw; /* Pushes content right to make room for sidebar */
-    width: calc(100% - 20vw);
+    margin-left: 15vw; /* Pushes content right to make room for sidebar */
+    width: calc(100% - 15vw);
     padding: 60px;
 }
 
