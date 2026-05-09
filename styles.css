@@ -14,9 +14,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    p {
+}
+p {
     margin-bottom: 1em;
-    line-height: 1.6;
+    line-height: 1;
+}
+h1 {
+    color: var(--text-color);
+}
+h2 {
+    color: var(--link-color);
 }
 }
 
@@ -297,4 +304,173 @@ section {
 .lightbox-close:hover {
     background-color: var(--accent-color);
     transform: scale(1.1);
+}
+
+/* ── About page ── */
+
+.about-page {
+    min-height: 100vh;
+    padding: 2.5rem 2rem 4rem;
+}
+
+.as-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--as-border);
+}
+
+.as-avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.as-avatar-placeholder {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--as-border);
+    flex-shrink: 0;
+}
+
+.as-header-info {
+    flex: 1;
+}
+
+.as-location {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.as-location svg {
+    opacity: 0.6;
+}
+
+.as-bio {
+    margin-bottom: 2rem;
+    max-width: 72ch;
+}
+
+.as-bio p {
+    margin: 0 0 0.85rem;
+}
+
+.as-bio p:last-child {
+    margin: 0;
+}
+
+.as-section {
+    margin-bottom: 2rem;
+}
+
+.as-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.as-tag {
+    background: var(--as-tag-bg);
+    border: 1px solid var(--as-border);
+    border-radius: 3px;
+    padding: 0.3rem 0.7rem;
+    cursor: default;
+    transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.as-tag:hover {
+    background: var(--as-tag-hover);
+    border-color: rgba(19,175,240,0.3);
+    color: var(--as-accent);
+}
+
+.as-tag.primary {
+    color: var(--as-accent);
+    border-color: var(--background-color);
+    background: var(--background-color);
+}
+
+/* --- Shared card style --- */
+.as-card {
+    background: var(--accent-color);
+    border: 1px solid var(--as-border);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+}
+
+
+.as-card .as-label {
+    margin-bottom: 0.75rem;
+}
+
+.as-card--full {
+    grid-column: 1 / -1;
+}
+
+/* --- Two-column grid (skills + software) --- */
+.as-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+    .as-cols { grid-template-columns: 1fr; }
+}
+
+/* --- Divider --- */
+.as-divider {
+    border: none;
+    border-top: 1px solid var(--as-border);
+    margin: 2rem 0;
+}
+
+/* --- Casual grid --- */
+.as-casual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .as-casual-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Photo strip --- */
+.as-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.as-photos img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--as-border);
+    display: block;
+}
+
+@media (max-width: 500px) {
+    .as-photos { grid-template-columns: 1fr 1fr; }
+    .as-photos img:last-child { display: none; }
+}
+
+.project-body {
+    max-width: 72ch;
+    margin-bottom: 2rem;
+}
+
+.project-link {
+    margin-top: 1.5rem;
 }

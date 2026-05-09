@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet">
     <title>About - Izzie Alvey - 3D Artist Portfolio</title>
 </head>
 <body>
+
     <!-- SIDEBAR NAVIGATION -->
     <nav class="sidebar">
         <div class="logo">
@@ -16,7 +20,6 @@
         <ul class="nav-links">
             <li><a href="index.html">Highlights</a></li>
             <li><a href="about.html">About</a></li>
-            <!-- Dropdown Menu -->
             <li class="dropdown">
                 <a href="#" id="projects-btn">Projects</a>
                 <ul class="submenu" id="projects-submenu">
@@ -40,65 +43,122 @@
 
     <!-- MAIN CONTENT -->
     <main class="content">
-        <!-- section 2 // about -->
-        <section id="about" class="about">
-            
-            <h2>About</h2>
+        <section id="about" class="about-page">
 
-<p>I'm Izzie, a 3D artist and game designer based in Birmingham UK, specialising in character design and social environments.
+            <!-- Bio -->
+            <div class="as-section">
+                <h2 class="as-label">About</h2>
+                <div class="as-bio">
+                    <p>3D artist and game designer with 4 years of independent experience, specialising in character design and social environments. My work tends to be stylised and semi-realistic. I'm comfortable adapting to a project's visual language.</p>
+                    <p>I care about work that is both visually strong and technically sound. I thrive in team environments and will take initiative when needed, but I'm equally comfortable working under direction.</p>
+                </div>
+            </div>
 
-I've been working as a self taught independent 3d artist for 4 years.
+            <!-- Skills & Software in two columns -->
+            <div class="as-cols">
+                <div class="as-card">
+                    <h2 class="as-label">Skills</h2>
+                    <div class="as-tags">
+                        <span class="as-tag primary">Character Design</span>
+                        <span class="as-tag primary">Social Environments</span>
+                        <span class="as-tag">Box Modelling</span>
+                        <span class="as-tag">Sculpting</span>
+                        <span class="as-tag">Retopology</span>
+                        <span class="as-tag">UV Unwrapping</span>
+                        <span class="as-tag">Rigging</span>
+                        <span class="as-tag">Weight Painting</span>
+                        <span class="as-tag">Shape Keys</span>
+                        <span class="as-tag">Facial Gestures &amp; Visemes</span>
+                        <span class="as-tag">Garment Construction</span>
+                        <span class="as-tag">Corrective Blendshapes</span>
+                        <span class="as-tag">Animation Trees</span>
+                        <span class="as-tag">Anatomy &amp; Form</span>
+                    </div>
+                </div>
+                <div class="as-card">
+                    <h2 class="as-label">Software</h2>
+                    <div class="as-tags">
+                        <span class="as-tag primary">Blender</span>
+                        <span class="as-tag primary">Substance Painter</span>
+                        <span class="as-tag primary">Unity</span>
+                        <span class="as-tag">Fill Layers &amp; Masks</span>
+                        <span class="as-tag">Smart Materials</span>
+                        <span class="as-tag">Baking</span>
+                    </div>
+                </div>
+            </div>
 
-My interests include building characters with high customisability and cozy social spaces. <br />
+            <hr class="as-divider">
 
-I Primarily work in blender and can cover the full character pipeline.
+            <!-- Casual section -->
+            <div class="as-section">
+                <h2 class="as-label">A bit more about me</h2>
+                <div class="as-casual-grid">
+                    <div class="as-card">
+                        <h2 class="as-label">Playing</h2>
+                       <div class="as-tags">
+    <span class="as-tag primary">BOTW</span>
+    <span class="as-tag primary">Factorio</span>
+    <span class="as-tag">Grounded</span>
+    <span class="as-tag">Elden Ring</span>
+    <span class="as-tag">Farming Simulator</span>
+    <span class="as-tag">Katamari</span>
+    <span class="as-tag">RDR2</span>
+    <span class="as-tag">Kenshi</span>
+</div>
+                    </div>
+                    <div class="as-card">
+                        <h2 class="as-label">Watching</h2>
+                        <div class="as-tags">
+                                <span class="as-tag primary">Severance</span>
+    <span class="as-tag">Anime</span>
+    <span class="as-tag">Cartoons</span>
+    <span class="as-tag">Horror</span>
+    <span class="as-tag">Sci-fi</span>
 
-I am skilled in box modelling, sculpting, retopology, UV Unwrapping, rigging and weight painting. I am proficient in building rigs for games.
+</div>
+                    </div>
+                    <div class="as-card">
+                        <h2 class="as-label">Listening</h2>
+<div class="as-tags">
+    <span class="as-tag primary">Jazz House</span>
+    <span class="as-tag primary">PSX Jungle</span>
+    <span class="as-tag primary">Liquid Drum &amp; Bass</span>
+    <span class="as-tag">Wide variety across genres</span>
+</div>
+                    </div>
+                    <div class="as-card">
+                        <h2 class="as-label">Hobbies
 
-I am also skilled in creating shape keys / blendshapes for customisation and have a high level of knowledge of how to sculpt facial gestures and visemes / mouth shapes. <br />
+                        </h2>
+   <div class="as-tags">
+    <span class="as-tag primary">DJing</span>
+    <span class="as-tag primary">VR</span>
+    <span class="as-tag">Fashion</span>
+    <span class="as-tag">Drag</span>
+    <span class="as-tag">LARP</span>
+    <span class="as-tag">Autoharps</span>
+</div>
+                    </div>
+                    <div class="as-card as-card--full">
+                        <h2 class="as-label">And most importantly</h2>
+                        <p>This is my son. Simberly Sardashian</p>
 
-For texturing I use Substance Painter. I am able to competently create a scene for texturing then do so using fill layers and masks, aswell as using smart materials and baking.
+            <div class="as-card">
+                <img src="Images/20260422_101732.jpg" alt="Portfolio showcase" loading="lazy" style="width: 50%;">
+            </div>
 
-My work tends to be stylised and semi-realistic but I am comfortable adapting to a project's visual language.<br />
-
-In Unity I am proficient in building animation trees, using corrective blendshapes, and setting up highly customisable characters with a large variety of clothing and accessory toggles.
-
-Additionally I have a moderate knowledge of fashion, fashion history and 3d garment construction and can rig these items to bases with minimal clipping. I also have a strong understanding of anatomy and form which I use to inform my modelling and texturing work. <br />
-
-I care about delivering work that's both visually strong and technically sound.
-
-I am able to thrive in a team based environment and will take initiative to lead when necessary, but I am also happy to take direction and work under the guidance of others. <br />
-<p> <u>
-If you are interested in working together please get in touch via my external links </u></p>
-
-<h2>About (but casual)</h2>
-<p>In my free time I'm usually playing video games. My current favourites are BOTW, Factorio, Grounded, Elden Ring, Farming Simulator, Katamari, RDR2, Kenshi <br />
- I enjoy watching movies and TV shows, with a particular love for Anime, Cartoons, Horror and scifi. My favourite show is currently Severance. <br />
- I also have a strong interest in fashion, and enjoy following trends and experimenting with my own style. I have a particular love for alt-vintage fashion <br />
- I listen to a lot of music, and enjoy listening to a wide variety of genres. My current most listened to playlists are primarily Jazz house, PSX Jungle, and liquid drum and bass. <br />
- I have a cat named Simba who is a big part of my life. I enjoy spending time with him on an evening as a source of comfort.
-</p>
-       <section id="home" class="hero">
-    
-        <img src="Images/20260220_231641.jpg" alt="Portfolio showcase">
-    </a> 
-        <img src="Images/20260415_164517.jpg" alt="Portfolio showcase">
-    </a>
-        <img src="Images/20260422_101732.jpg" alt="Portfolio showcase">
-    </a>
-</section>
+        </section>
     </main>
 
     <script src="Images/oneko.js" data-cat="Images/oneko.gif" data-after=".sidebar .logo"></script>
 
-    <!-- Submenu Toggle Script -->
     <script>
         const projectsBtn = document.getElementById('projects-btn');
         const projectsSubmenu = document.getElementById('projects-submenu');
         const contactBtn = document.getElementById('contact-btn');
         const contactSubmenu = document.getElementById('contact-submenu');
 
-        // Restore saved dropdown states on page load
         function restoreDropdownStates() {
             if (projectsSubmenu && localStorage.getItem('projectsOpen') === 'true') {
                 projectsSubmenu.classList.add('no-transition', 'open');
@@ -110,7 +170,6 @@ If you are interested in working together please get in touch via my external li
             }
         }
 
-        // Save and toggle dropdown states
         if (projectsBtn && projectsSubmenu) {
             projectsBtn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -127,7 +186,6 @@ If you are interested in working together please get in touch via my external li
             });
         }
 
-        // Restore states when page loads
         restoreDropdownStates();
     </script>
 </body>
