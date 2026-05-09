@@ -25,7 +25,6 @@ h1 {
 h2 {
     color: var(--link-color);
 }
-}
 
 html {
     scroll-behavior: smooth;
@@ -53,7 +52,7 @@ a {
     width: 15vw; 
     min-width: 200px;
     height: 100vh; 
-    background-color: #2c2c2c;
+    background-color: #232323; /* or var(--accent-color) for #555555 */
     color: var(--link-color);
     padding-top: 30px;
 }
