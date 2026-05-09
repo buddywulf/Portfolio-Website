@@ -37,7 +37,7 @@ body {
     background-color: var(--background-color);
     display: flex;
     font-size: 24px;
-    /* padding-right: 10%; */
+  
 }
 
 a {
@@ -45,14 +45,14 @@ a {
     text-decoration: none;
 }
 
-/* --- Sidebar Styling --- */
+[SIDEBAR]
 .sidebar {
-    position: fixed; /* Locks the sidebar to the left */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 15vw; /* Sidebar takes up 20% of the viewport width */
+    width: 15vw; 
     min-width: 200px;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh; 
     background-color: #2c2c2c;
     color: var(--link-color);
     padding-top: 30px;
@@ -72,12 +72,12 @@ a {
     display: block;
     color: var(--link-color);
     text-decoration: none;
-    transition: background 0.3s; /* Smooth hover effect */
-    padding: 5px clamp(20px, 2vw, 30px); /* Responsive padding */
-    font size: 5px clamp (6px, 1vw, 20px); /* Responsive font size */
-    white-space: nowrap; /* Prevents text from wrapping */
-    overflow: hidden; /* Hides any overflow text */
-    text-overflow: ellipsis; /* Adds "..." for overflow text */
+    transition: background 0.3s;
+    padding: 5px clamp(20px, 2vw, 30px);
+    font size: 5px clamp (6px, 1vw, 20px); 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 }
 
@@ -85,15 +85,15 @@ a {
     background-color: var(--accent-color);
 }
 
-/* --- Smooth Submenu Styling --- */
+
 .submenu {
     list-style: none;
     background-color: var(--background-color);
-    max-height: 0; /* Keeps menu closed initially */
-    overflow: hidden; /* Prevents text from bleeding out while closed */
+    max-height: 0; 
+    overflow: hidden; 
     opacity: 0;
     pointer-events: none;
-    transition: max-height 0.3s ease-out; /* Smooth transition for opening/closing */
+    transition: max-height 0.3s ease-out; 
 }
 
 .submenu.no-transition {
@@ -101,7 +101,7 @@ a {
 }
 
 .submenu.open {
-    max-height: 250px; /* Expands menu on click (must be taller than the content) */
+    max-height: 250px; 
     opacity: 1;
     pointer-events: auto;
 }
@@ -131,16 +131,16 @@ a {
     align-items: flex-start;
     gap: 1px;
     padding: 10px 15px;
-    width: 100%;   /* ← shrinks to its content instead of stretching */
+    width: 100%;   
 }
 
 .contact-submenu li {
     margin: 0;
-    width: fit-content;          /* ← remove width: 100%, let items size naturally */
+    width: fit-content;          
 }
 
 .contact-dropdown .contact-submenu a {
-    display: flex;           /* ← flex instead of inline-flex, more reliable here */
+    display: flex;          
     align-items: center;
     justify-content: center;
     width: 27px;
@@ -164,16 +164,16 @@ a {
     flex-shrink: 0;
 }
 
-/* --- Main Content Area --- */
+
 .content {
-    margin-left: 15vw; /* Pushes content right to make room for sidebar */
+    margin-left: 15vw; 
     width: calc(100% - 15vw);
     padding: 60px;
 }
 
 section {
     margin-bottom: 40px;
-    min-height: auto; /* Less forced spacing between sections */
+    min-height: auto;
 }
 
 .sketchfab-embed-wrapper {
@@ -187,7 +187,7 @@ section {
     border-radius: 8px;
 }
 
-/* --- Hero Section --- */
+
 .hero {
     display: flex;
     flex-wrap: wrap;
@@ -213,10 +213,10 @@ section {
 
 .video-background {
     position: relative;
-    width: 100%;           /* ← fits the content column, not the whole viewport */
-    aspect-ratio: 16 / 9;  /* ← maintains correct proportions automatically */
+    width: 100%;         
+    aspect-ratio: 16 / 9;  
     overflow: hidden;
-    border-radius: 8px;    /* ← optional, matches your iframe style elsewhere */
+    border-radius: 8px;   
 }
 
 .video-background iframe {
@@ -228,12 +228,12 @@ section {
     border: none;
 }
 
-/* --- Gallery thumbnail cursor --- */
+
 .gallery .gallery-img {
     cursor: pointer;
 }
 
-/* --- Lightbox Overlay --- */
+
 .lightbox {
     display: none;
     position: fixed;
@@ -274,7 +274,7 @@ section {
     justify-content: center;
     flex-shrink: 0;
     transition: background 0.2s, transform 0.2s;
-    font-family: sans-serif; /* arrows render better without pixel font */
+    font-family: sans-serif; 
 }
 
 .lightbox-arrow:hover {
@@ -306,7 +306,7 @@ section {
     transform: scale(1.1);
 }
 
-/* ── About page ── */
+
 
 .about-page {
     min-height: 100vh;
@@ -397,7 +397,7 @@ section {
     background: var(--background-color);
 }
 
-/* --- Shared card style --- */
+
 .as-card {
     background: var(--accent-color);
     border: 1px solid var(--as-border);
@@ -414,7 +414,6 @@ section {
     grid-column: 1 / -1;
 }
 
-/* --- Two-column grid (skills + software) --- */
 .as-cols {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -426,14 +425,14 @@ section {
     .as-cols { grid-template-columns: 1fr; }
 }
 
-/* --- Divider --- */
+
 .as-divider {
     border: none;
     border-top: 1px solid var(--as-border);
     margin: 2rem 0;
 }
 
-/* --- Casual grid --- */
+
 .as-casual-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -444,7 +443,7 @@ section {
     .as-casual-grid { grid-template-columns: 1fr; }
 }
 
-/* --- Photo strip --- */
+
 .as-photos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
